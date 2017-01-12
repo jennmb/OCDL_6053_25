@@ -1,5 +1,5 @@
 Objective: My objective for this term is continue with ruby, and finish the excerises in the "Learn Ruby the Hard Way". 
-I hope to be dont with the book and move one to other programming languages. 
+I hope to be done with the book and move one to other programming languages. 
 I have a few languages I wish to start; Python, C and C++ (?), Swift, and Android studio. 
 I do not mean to start all of them just one of that list. I have began learn some swift with the website I worked on during the meetup. 
 With Python, I don't know what it is or for what it is used for. 

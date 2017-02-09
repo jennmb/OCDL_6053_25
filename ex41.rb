@@ -7,8 +7,8 @@ PHRASES = {
 	"class ### < ###\nend" =>
 		"Make a class named ### that is-a ###.",
 	"class ###\n\tdef initialize(@@@)\n\tend\nend" =>
-		"class ### has-a initializethat takes @@@ parameters.",
-	"class ###\n\tdef ***(@@@)\n\tend\n\end" =>
+		"class ### has-a initialize that takes @@@ parameters.",
+	"class ###\n\tdef ***(@@@)\n\tend\nend" =>
 		"class ### has-a function named *** that takes @@@ parameters.",
 	"*** = ###.new()" =>
 		"Set *** to an instance of class ###.",
@@ -21,16 +21,16 @@ PHRASES = {
 PHRASE_FIRST = ARGV[0] =="english"
 
 open(WORD_URL) {|f|
-	f.each_line {|word| WORDS.push(words.chomp)}
+	f.each_line {|word| WORDS.push(word.chomp)}
 }
 
-def craft_name(rand_words, snippet, pattern)
+def craft_names(rand_words, snippet, pattern, caps=false)
 	names = snippet.scan(pattern).map do
 		word = rand_words.pop()
 		caps ? word.capitalize : word
 	end
 
-	return name * 2
+	return names * 2
 end
 
 def craft_params(rand_words, snippet, pattern)
@@ -69,6 +69,20 @@ end
 
 # keep going until they hit CTRL-D
 loop do
-	snippet = PHRASES.keys().sort_by {rand}
+	snippets = PHRASES.keys().sort_by {rand}
 
-	for snippet
+	for snippet in snippets
+		phrase = PHRASES[snippet]
+		question, answer = convert(snippet, phrase)
+
+		if PHRASE_FIRST
+			question, answer = answer, question
+		end
+
+		print question, "\n\n> "
+
+		exit(0) unless $stdin.gets
+
+		puts "\nANSWER: %s\n\n" % answer
+	end
+end

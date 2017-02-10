@@ -14,7 +14,7 @@ class Engine
 
 	def play()
 		current_scene = @scene_map.opening_scene()
-		last_scene = @scene_map.next_scene()
+		last_scene = @scene_map.next_scene('finished')
 
 		while current_scene != last_scene
 			next_scene_name = current_scene.enter()
@@ -81,7 +81,7 @@ class CentralCorridor < Scene
 			puts "You tell the one Gothon joke you know:"
 			puts "Lbhe zbgure vf fb sng jura fur fvgf nebhaq gur ubhfr, fur fvgf nebhaq gur ubhfr."
 			puts "The Gothon stops, tries not to laugh, then busts out laughing and can't move."
-			puts "While he's laughng you run up and shoot him square in the head"
+			puts "While he's laughing you run up and shoot him square in the head"
 			puts "putting him down, them jump through the Weapon Armory door."
 			return 'laser_weapon_armory'
 
@@ -105,7 +105,7 @@ class LaserWeaponArmory < Scene
 		code = "#{rand(1..9)}#{rand(1..9)}#{rand(1..9)}"
 		print "[keypad]> "
 		guess = $stdin.gets.chomp
-		guesses = 0
+		guesses = 1
 
 		while guess != code && guesses < 10
 			puts "BZZZZEDD!"
@@ -212,16 +212,23 @@ class Map
 	@@scenes = {
 		'central_corridor' => CentralCorridor.new(),
 		'laser_weapon_armory' => LaserWeaponArmory.new(),
-		'the_bridge' => TheBridge.new()
+		'the_bridge' => TheBridge.new(),
+		'escape_pod' => EscapePod.new(),
+		'death' => Death.new(),
+		'finished' => Finished.new(),
 	}
 
-	def initialize(Start_scene)
+	def initialize(start_scene)
+		@start_scene = start_scene
 	end
 
 	def next_scene(scene_name)
+		val = @@scenes[scene_name]
+		return val
 	end
 
 	def opening_scene()
+		return next_scene(@start_scene)
 	end
 end
 

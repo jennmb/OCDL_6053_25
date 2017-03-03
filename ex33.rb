@@ -3,16 +3,17 @@ i = 0
 # sets numbers as an empty array
 numbers = []
 
-# as long as i is less than 6 cont. excecuting this code
+# while i is less than 6
 while i < 6
-	# output At the tip i is (i value)
-	puts "At the tip i is #{i}"
-	# inputs values used as i to numbers(?)
+	# output At the top i is (i value)
+	puts "At the top i is #{i}"
+	# pushes values of i into numbers
 	numbers.push(i)
 
 	# adds 1 to i value
 	i += 1
-	# outputs Numbers now: (numbers value)
+	# output Numbers now: 
+	# output numbers value
 	puts "Numbers now: ", numbers
 	# output At the bottom i is (i value)
 	puts "At the bottom i is #{i}"
@@ -21,7 +22,7 @@ end
 # outputs The numbers: 
 puts "The numbers: "
 
-# remember you can write this 2 other way?
-# for each item in numbers assign as num
-# output num value
+# remember you can write this 2 other ways?
+# assigns each element of numbers to num
+# outputs num value
 numbers.each {|num| puts num }

@@ -1,0 +1,1 @@
+Today I worked on using git through the command line. I spent time searching for how to commit to a certain branch. In the end I read that git checkout -b (name) --track was the answer. I have yet to try it for myself. 

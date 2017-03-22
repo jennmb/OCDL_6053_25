@@ -1,0 +1,17 @@
+I finally found someone's repository on exercise 48 on git hub.
+I'm currently looking at how they did the lexicon.rb
+In the "Learn Ruby the Hard Way" CD we're told to create a
+module, although in the example I found, they created a class.
+I plan to write my code to how shaw started off in the CD, and use the example as a sort of guide.
+
+ link to ex: https://github.com/inklin/Learn-Ruby-the-Hard-Way/blob/master/ex48/lexicon.rb
+
+I also continued to work on a website I found through
+tumblr, this is a course on Ruby there are also other
+programming languages. For the most part it was mainly
+review for me because I already learned the materials
+taught from "Learn Ruby the Hard Way". However, there are
+some concepts that were new; such as, the .times method.
+
+ link to website: https://www.codecademy.com/learn/all
+ link to ruby course: https://www.codecademy.com/learn/ruby
